@@ -1,0 +1,129 @@
+$color-paleblue: hsl(225, 100%, 94%);
+$color-brightblue: hsl(245, 75%, 52%);
+$color-verypaleblue: hsl(225, 100%, 98%);
+$color-desaturatedblue: hsl(224, 23%, 55%);
+$color-darkblue: hsl(223, 47%, 23%);
+$color-white: #FFF;
+// mixins
+$breakpoints: (
+    mobile: 375px,
+    ipad: 700px
+);
+@mixin mobile-only {
+    @media all and (max-width: map-get($breakpoints, mobile)){
+        @content;
+    }
+}
+
+// mixins
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-desaturatedblue;
+    background-image: url(images/pattern-background-desktop.svg);
+    background-color: $color-paleblue;
+    background-repeat: no-repeat;
+    max-width: 1440px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 20px;
+    font-weight: 700;
+}
+
+.card {
+    max-width: 450px;
+    height: 700px;
+    border-radius: 1rem;
+    background-color: $color-white;
+    text-align: center;
+    overflow: hidden;
+    @include mobile-only {
+        width: 325px;
+        height: 530px;
+        & img {
+            width: 100%;
+        }
+    }
+    &__content {
+        display: grid;
+        gap: 1em;
+        padding: 3rem;
+        @include mobile-only {
+            padding: 1.5rem;
+            & h1 {
+                font-size: 1.25rem;
+                font-weight: 900;
+            }
+        }
+        & h1 {
+            color: $color-darkblue;
+        }
+        & .plan{
+            width: 100%;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: auto;
+            background-color: $color-verypaleblue;
+            display: flex;
+            gap: 1.4rem;
+            align-items: center;
+            @include mobile-only{
+                padding: .5rem 1rem;
+            }
+            &__detail {
+                & h2 {
+                    color: $color-darkblue;
+                    font-size: 1em;
+                }
+            }
+            & .button-underline {
+                text-decoration: underline;
+                color: $color-brightblue;
+                margin-left: auto;
+                padding: 0;
+                &:hover {
+                    color: $color-desaturatedblue;
+                    text-decoration: none;
+                }
+            }
+        }
+        & .button-blue {
+            background-color: $color-brightblue;
+            color: $color-white;
+            border-radius: 10px;
+            margin-top: 10px;
+            box-shadow: 0px 7px 60px $color-desaturatedblue;
+            @include mobile-only{
+                margin-top: 0;
+            }
+            &:hover {
+                background-color: $color-desaturatedblue;
+            }
+        }
+        & .button-transparent {
+            color: $color-desaturatedblue;
+            @include mobile-only{
+                padding: 10px;
+            }
+            &:hover {
+                color: $color-darkblue;
+            }
+        }
+    }
+}

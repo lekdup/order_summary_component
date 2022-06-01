@@ -1,0 +1,151 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #7280a7;
+  background-image: url(images/pattern-background-desktop.svg);
+  background-color: #e0e8ff;
+  background-repeat: no-repeat;
+  max-width: 1440px;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 20px;
+  font-weight: 700;
+}
+
+.card {
+  max-width: 450px;
+  height: 700px;
+  border-radius: 1rem;
+  background-color: #FFF;
+  text-align: center;
+  overflow: hidden;
+}
+
+@media all and (max-width: 375px) {
+  .card {
+    width: 325px;
+    height: 530px;
+  }
+  .card img {
+    width: 100%;
+  }
+}
+
+.card__content {
+  display: -ms-grid;
+  display: grid;
+  gap: 1em;
+  padding: 3rem;
+}
+
+@media all and (max-width: 375px) {
+  .card__content {
+    padding: 1.5rem;
+  }
+  .card__content h1 {
+    font-size: 1.25rem;
+    font-weight: 900;
+  }
+}
+
+.card__content h1 {
+  color: #1f2f56;
+}
+
+.card__content .plan {
+  width: 100%;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: auto;
+  background-color: #f5f7ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.4rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media all and (max-width: 375px) {
+  .card__content .plan {
+    padding: .5rem 1rem;
+  }
+}
+
+.card__content .plan__detail h2 {
+  color: #1f2f56;
+  font-size: 1em;
+}
+
+.card__content .plan .button-underline {
+  text-decoration: underline;
+  color: #3829e0;
+  margin-left: auto;
+  padding: 0;
+}
+
+.card__content .plan .button-underline:hover {
+  color: #7280a7;
+  text-decoration: none;
+}
+
+.card__content .button-blue {
+  background-color: #3829e0;
+  color: #FFF;
+  border-radius: 10px;
+  margin-top: 10px;
+  -webkit-box-shadow: 0px 7px 60px #7280a7;
+          box-shadow: 0px 7px 60px #7280a7;
+}
+
+@media all and (max-width: 375px) {
+  .card__content .button-blue {
+    margin-top: 0;
+  }
+}
+
+.card__content .button-blue:hover {
+  background-color: #7280a7;
+}
+
+.card__content .button-transparent {
+  color: #7280a7;
+}
+
+@media all and (max-width: 375px) {
+  .card__content .button-transparent {
+    padding: 10px;
+  }
+}
+
+.card__content .button-transparent:hover {
+  color: #1f2f56;
+}
+/*# sourceMappingURL=main.css.map */
