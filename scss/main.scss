@@ -24,75 +24,88 @@ $breakpoints: (
 }
 
 body {
+    max-width: 1440px;
+    min-height: 100vh;
     font-family: 'Red Hat Display', sans-serif;
     font-size: 16px;
     font-weight: 500;
     color: $color-desaturatedblue;
-    background-image: url(images/pattern-background-desktop.svg);
+    background-image: url(../images/pattern-background-desktop.svg);
     background-color: $color-paleblue;
     background-repeat: no-repeat;
-    max-width: 1440px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background-size: contain;
+    display: grid;
+    place-items: center;
 }
 button {
     cursor: pointer;
     border: none;
     background: none;
-    padding: 20px;
     font-weight: 700;
 }
 
 .card {
-    max-width: 450px;
-    height: 700px;
+    max-width: 380px;
+    height: 560px;
     border-radius: 1rem;
     background-color: $color-white;
     text-align: center;
     overflow: hidden;
+    &__image{
+        width: 100%;
+    }
     @include mobile-only {
         width: 325px;
-        height: 530px;
-        & img {
+        line-height: 1.55rem;
+        img {
             width: 100%;
         }
     }
     &__content {
         display: grid;
-        gap: 1em;
-        padding: 3rem;
+        gap: 1rem;
+        padding: 2rem 3rem;
         @include mobile-only {
             padding: 1.5rem;
-            & h1 {
+            h1 {
                 font-size: 1.25rem;
                 font-weight: 900;
             }
         }
-        & h1 {
+        h1 {
             color: $color-darkblue;
+            font-size: 1.40rem;
         }
-        & .plan{
+        p{
+            font-size: .9rem;
+        }
+        .plan{
             width: 100%;
-            border-radius: 1rem;
-            padding: 1.5rem;
+            border-radius: .5rem;
+            padding: 1rem;
             margin: auto;
             background-color: $color-verypaleblue;
             display: flex;
             gap: 1.4rem;
             align-items: center;
-            @include mobile-only{
-                padding: .5rem 1rem;
-            }
-            &__detail {
-                & h2 {
-                    color: $color-darkblue;
-                    font-size: 1em;
+            &__image{
+                width: 40px;
+                height: 40px;
+                img{
+                    width: 100%;
                 }
             }
-            & .button-underline {
+            @include mobile-only{
+                padding: 1rem;
+                margin-top: 1rem;
+            }
+            &__detail {
+                h2 {
+                    color: $color-darkblue;
+                    font-size: .9em;
+                }
+            }
+            .button-underline {
                 text-decoration: underline;
                 color: $color-brightblue;
                 margin-left: auto;
@@ -103,24 +116,25 @@ button {
                 }
             }
         }
-        & .button-blue {
+        .button-blue {
+            font-size: .75rem;
+            padding: .85rem;
             background-color: $color-brightblue;
             color: $color-white;
             border-radius: 10px;
-            margin-top: 10px;
+            margin-top: .7rem;
             box-shadow: 0px 7px 60px $color-desaturatedblue;
             @include mobile-only{
-                margin-top: 0;
+                margin-top: .5rem;
             }
             &:hover {
                 background-color: $color-desaturatedblue;
             }
         }
-        & .button-transparent {
+        .button-transparent {
+            font-size: .8rem;
             color: $color-desaturatedblue;
-            @include mobile-only{
-                padding: 10px;
-            }
+            margin-top: .4rem;
             &:hover {
                 color: $color-darkblue;
             }

@@ -5,41 +5,42 @@
 }
 
 body {
+  max-width: 1440px;
+  min-height: 100vh;
   font-family: "Red Hat Display", sans-serif;
   font-size: 16px;
   font-weight: 500;
   color: #7280a7;
-  background-image: url(images/pattern-background-desktop.svg);
+  background-image: url(../images/pattern-background-desktop.svg);
   background-color: #e0e8ff;
   background-repeat: no-repeat;
-  max-width: 1440px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background-size: contain;
+  display: grid;
+  place-items: center;
 }
 
 button {
   cursor: pointer;
   border: none;
   background: none;
-  padding: 20px;
   font-weight: 700;
 }
 
 .card {
-  max-width: 450px;
-  height: 700px;
+  max-width: 380px;
+  height: 560px;
   border-radius: 1rem;
   background-color: #FFF;
   text-align: center;
   overflow: hidden;
 }
+.card__image {
+  width: 100%;
+}
 @media all and (max-width: 375px) {
   .card {
     width: 325px;
-    height: 530px;
+    line-height: 1.55rem;
   }
   .card img {
     width: 100%;
@@ -47,8 +48,8 @@ button {
 }
 .card__content {
   display: grid;
-  gap: 1em;
-  padding: 3rem;
+  gap: 1rem;
+  padding: 2rem 3rem;
 }
 @media all and (max-width: 375px) {
   .card__content {
@@ -61,25 +62,37 @@ button {
 }
 .card__content h1 {
   color: #1f2f56;
+  font-size: 1.4rem;
+}
+.card__content p {
+  font-size: 0.9rem;
 }
 .card__content .plan {
   width: 100%;
-  border-radius: 1rem;
-  padding: 1.5rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
   margin: auto;
   background-color: #f5f7ff;
   display: flex;
   gap: 1.4rem;
   align-items: center;
 }
+.card__content .plan__image {
+  width: 40px;
+  height: 40px;
+}
+.card__content .plan__image img {
+  width: 100%;
+}
 @media all and (max-width: 375px) {
   .card__content .plan {
-    padding: 0.5rem 1rem;
+    padding: 1rem;
+    margin-top: 1rem;
   }
 }
 .card__content .plan__detail h2 {
   color: #1f2f56;
-  font-size: 1em;
+  font-size: 0.9em;
 }
 .card__content .plan .button-underline {
   text-decoration: underline;
@@ -92,27 +105,26 @@ button {
   text-decoration: none;
 }
 .card__content .button-blue {
+  font-size: 0.75rem;
+  padding: 0.85rem;
   background-color: #3829e0;
   color: #FFF;
   border-radius: 10px;
-  margin-top: 10px;
+  margin-top: 0.7rem;
   box-shadow: 0px 7px 60px #7280a7;
 }
 @media all and (max-width: 375px) {
   .card__content .button-blue {
-    margin-top: 0;
+    margin-top: 0.5rem;
   }
 }
 .card__content .button-blue:hover {
   background-color: #7280a7;
 }
 .card__content .button-transparent {
+  font-size: 0.8rem;
   color: #7280a7;
-}
-@media all and (max-width: 375px) {
-  .card__content .button-transparent {
-    padding: 10px;
-  }
+  margin-top: 0.4rem;
 }
 .card__content .button-transparent:hover {
   color: #1f2f56;
